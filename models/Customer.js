@@ -5,7 +5,6 @@ const customerSchema = new mongoose.Schema({
   name: { type: String },
   email: {
     type: String,
-    unique: true,
     trim: true,
     lowercase: true,
     validate: {

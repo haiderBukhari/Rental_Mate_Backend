@@ -2,8 +2,7 @@ const orders = require("../models/Order");
 
 const createOrder = async (req, res) => {
     try {
-        const data = await orders.create(req.body);
-        console.log(data);
+        const data = await orders.create(req.body);       
         res.status(200).json({
             status: "success",
             data

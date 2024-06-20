@@ -160,9 +160,10 @@ const loginWithGoogle = async (req, res) => {
       const status = "vendor";
       return res.json({ token, status, id: user._id, name: user.name});
     }
-
+    if(!user.isActive) {
+      return res.status(400).json({ message: "User is not active" });
+    }
     const token = await generateToken(user);
-
     let status = '';
     if (user.isCustomer) status = "customer";
     else if (user.isVendor) status = "vendor";

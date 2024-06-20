@@ -87,7 +87,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
-app.use(verifyToken);
+// app.use(verifyToken);
 app.use("/vendors", vendorRoutes);
 app.use("/profile", profileRoutes);
 app.use("/products", productRoutes);
@@ -118,6 +118,7 @@ app.post("/create-payment-intent", async (req, res) => {
       currency: "usd",
       payment_method: "pm_card_visa",
     });
+    console.log(paymentIntent);
     res.status(200).json({ clientSecret: paymentIntent.client_secret });
   } catch (err) {
     console.error(err);

@@ -3,7 +3,7 @@ const User = require("../models/Customer");
 const getAllVendorDetails = async (req, res) => {
     try {
         const { page } = req.query; // Assuming page is sent as a query parameter
-        const perPage = 10; // Number of items per page
+        const perPage = 500; // Number of items per page
 
         const query = { isAdmin: false, isActive: true }; // Query to find items where isVendor is true
 

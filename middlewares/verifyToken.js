@@ -4,7 +4,7 @@ const { isNotFound } = require("entity-checker");
 const Token = require("../models/Token");
 
 const verifyToken = async (req, res, next) => {
-  const token = req.headers.authorization;
+  const token = req.headers.Authorization || req.headers.authorization;
   if (isNotFound(token)) {
     return res.status(403).json({ message: "Unauthorized request" });
   }

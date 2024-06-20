@@ -8,7 +8,7 @@ router.put("/:id", customerController.updateProfile);
 
 router.put("/:id", customerController.uploadProfilePicture);
 
-router.delete("/user/:id",adminVerify , customerController.deleteUser);
+router.delete("/user/:id", adminVerify , customerController.deleteUser);
 
 router.delete("/:id", customerController.deleteProfile);
 
